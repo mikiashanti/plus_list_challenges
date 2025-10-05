@@ -9,7 +9,8 @@ def add_chocolate(shopping_list: list):
     Returns:
         - the same list, with the string "chocolate" added to the end
     """
-    pass
+    shopping_list.append("chocolate")
+    return shopping_list
 
 def lou_bega(lyrics_list: list):
     """This function accepts a list of strings and adds the words 
@@ -36,7 +37,22 @@ def lou_bega(lyrics_list: list):
             "A little bit of Rita's all I need"
         ]
     """
-    pass
+    for lyric in range(len(lyrics_list)):
+        lyrics_list[lyric] = "A little bit of " + lyrics_list[lyric]
+
+    return lyrics_list
+
+    """
+    Alternative solution
+
+    new_lyrics_list = []
+
+    for lyric in lyrics_list:
+        new_lyric = "A little bit of " + lyric
+        new_lyrics_list.append(new_lyric)
+    
+    return new_lyrics_list
+    """
 
 def assemble_guest_list():
     """This function repeatedly prompts the user for the name of a dinner guest.
@@ -49,7 +65,18 @@ def assemble_guest_list():
     Returns:
         - a list of strings supplied by the user
     """
-    pass
+    guest_list = []
+    guest = input("Type name of dinner guest: ")
+
+    while guest != "":
+        guest_list.append(guest)
+        guest = input("Type name of dinner guest: ")
+        
+    else:
+        return guest_list
+    
+
+import math
 
 def is_prime(some_number: int): # A bit trickier!
     """This function tests to see if the input is a prime number.
@@ -65,8 +92,21 @@ def is_prime(some_number: int): # A bit trickier!
         - a boolean representing whether or not some_number is prime
     """
 
-    pass 
+    if some_number <= 1:
+        return False
     
-    # Hint: 
+    elif some_number == 2:
+        return True
+    
+    elif some_number % 2 == 0:
+        return False
+    
+    for factor in range(3, int(math.sqrt(some_number)) + 1, 2):
+        if some_number % factor == 0:
+            return False
+
+    return True
+
+    #   int(1.5) == 1.0
     #   int(1.5) == 1.0
 
