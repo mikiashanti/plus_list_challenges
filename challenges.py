@@ -37,21 +37,23 @@ def lou_bega(lyrics_list: list):
             "A little bit of Rita's all I need"
         ]
     """
+
+    new_lyrics_list = []
+
+    for lyric in lyrics_list:
+        new_lyric = f"A little bit of {lyric}"
+        new_lyrics_list.append(new_lyric)
+    
+    return new_lyrics_list
+    
+    """ 
+    Alternative solution
+
     for lyric in range(len(lyrics_list)):
         lyrics_list[lyric] = "A little bit of " + lyrics_list[lyric]
 
     return lyrics_list
 
-    """
-    Alternative solution
-
-    new_lyrics_list = []
-
-    for lyric in lyrics_list:
-        new_lyric = "A little bit of " + lyric
-        new_lyrics_list.append(new_lyric)
-    
-    return new_lyrics_list
     """
 
 def assemble_guest_list():
@@ -73,10 +75,21 @@ def assemble_guest_list():
         guest = input("Type name of dinner guest: ")
         
     else:
-        return guest_list
+        return guest_list # or just return guest_list without else
     
+    """
+    Alternative example
 
-import math
+    guest_list = []
+    while True:
+        guest = input("Type name of dinner guest: ")
+        if guest == ""
+            break
+        guest_list.append(guest)
+
+    return guest_list
+    """
+
 
 def is_prime(some_number: int): # A bit trickier!
     """This function tests to see if the input is a prime number.
@@ -91,6 +104,37 @@ def is_prime(some_number: int): # A bit trickier!
     Returns:
         - a boolean representing whether or not some_number is prime
     """
+
+    """
+    if some_number < 2:
+        return False
+
+    for i in range(2, some_number):
+        result = some_number / i
+        if result == int(result):
+            return False
+    return True
+
+    Alternatively, can use the modulo operator - %  
+
+    for i in range(2, some_number):
+        if some_number % i == 0
+            return False
+    return True    
+    
+    """
+
+
+
+
+
+
+
+
+
+
+
+    import math
 
     if some_number <= 1:
         return False
@@ -107,6 +151,5 @@ def is_prime(some_number: int): # A bit trickier!
 
     return True
 
-    #   int(1.5) == 1.0
     #   int(1.5) == 1.0
 
